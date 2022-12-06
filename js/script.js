@@ -38,8 +38,15 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 
 const targetPrice = document.getElementById('price');
 ////console.log(targetPrice);
-const targetError = document.getElementById('error-message')
-
+const targetError = document.getElementById('error-message');
+const targetNameSurnameDisplay1 = document.getElementById('name-surname-display-1');
+const targetNameSurnameDisplay2 = document.getElementById('name-surname-display-2');
+const targetNCarryage1 = document.getElementById('n-carryage-1');
+const targetNCarryage2 = document.getElementById('n-carryage-2');
+const targetCpCode1 = document.getElementById('cp-code-1');
+const targetCpCode2 = document.getElementById('cp-code-2');
+const targetKm1 = document.getElementById('km-1');
+const targetKm2 = document.getElementById('km-2');
 // 2. Store button in variable
 
 const submitButton = document.getElementById('submit');
@@ -92,7 +99,7 @@ submitButton.addEventListener('click', function(){
         isValid = false;
         targetError.classList.remove('d-none');
         targetError.innerText = "Il valore dei km deve essere positivo"
-        
+
     } 
     
     if (isValid) {
@@ -114,8 +121,18 @@ submitButton.addEventListener('click', function(){
         }
 
         //6.3.4 print final price
-        targetPrice.innerText = finalPrice.toFixed(2);
-
+        const carryageNo = "N. carrozza: " + (Math.floor(Math.random() * 9) + 1);
+        const cpCode = "Codice CP: " + (Math.floor(Math.random() * (99999 - 10000 + 1) + 10000));
+        console.log(carryageNo);
+        targetPrice.innerText = "Prezzo: " + finalPrice.toFixed(2) + "€";
+        targetNameSurnameDisplay1.innerText = nameSurname.toUpperCase();
+        targetNameSurnameDisplay2.innerText = nameSurname.toUpperCase();
+        targetNCarryage1.innerText = carryageNo;
+        targetNCarryage2.innerText = carryageNo;
+        targetCpCode1.innerText = cpCode;
+        targetCpCode2.innerText = cpCode;
+        targetKm1.innerText = "Km da percorrere: " + kilometers;
+        targetKm2.innerText = "Km da percorrere: " + kilometers;
     }
 
 })

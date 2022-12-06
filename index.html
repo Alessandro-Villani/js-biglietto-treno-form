@@ -30,7 +30,6 @@
                 <button type="button" id="submit" class="mb-3">Genera</button>
                 <input type="reset" value="Cancella" class="mb-3">
                 <p id="error-message" class="bg-danger d-none text-center text-white"></p>
-                <p id="price"></p>
             </form>
             <div class="ticket col-9">
                 <div class="ticket-top text-white row">
@@ -42,8 +41,33 @@
                     </div>
                 </div>
                 <div class="ticket-bottom row">
-                    <div class="col-4"></div>
-                    <div class="col-8"></div>
+                    <div class="col-4 py-2 d-flex flex-column justify-content-between">
+                        <div class="tb-top">
+                            <h5 id="name-surname-display-1"></h5>
+                            <h6 id="km-1"></h6>
+                        </div>
+                        <div class="tb-bottom">
+                            <h6 id="n-carryage-1"></h6>
+                            <h6 id="cp-code-1"></h6>
+                        </div>
+                    </div>
+                    <div class="col-8 py-2">
+                        <div class="row h-100">
+                            <div class="col-6 h-100 d-flex flex-column justify-content-between">
+                                <div class="tb-top">
+                                    <h5 id="name-surname-display-2"></h5>
+                                    <h6 id="km-2"></h6>
+                                </div>
+                                <div class="tb-bottom">
+                                    <h6 id="n-carryage-2"></h6>
+                                    <h6 id="cp-code-2"></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 h-100 d-flex flex-column justify-content-end align-items-end">
+                                <h6 id="price"></h6>
+                            </div>
+                        </div>  
+                    </div>
                 </div>
             </div>
         </div>
