@@ -47,6 +47,9 @@ const targetCpCode1 = document.getElementById('cp-code-1');
 const targetCpCode2 = document.getElementById('cp-code-2');
 const targetKm1 = document.getElementById('km-1');
 const targetKm2 = document.getElementById('km-2');
+const targetOriginalPrice = document.getElementById('original-price');
+const targetDiscountApplied = document.getElementById('discount-applied');
+
 // 2. Store button in variable
 
 const submitButton = document.getElementById('submit');
@@ -105,6 +108,9 @@ submitButton.addEventListener('click', function(){
     if (isValid) {
 
         targetError.classList.add('d-none');
+        targetOriginalPrice.innerHTML  = '';
+        targetDiscountApplied.innerText = '';
+
         //6.3 Set the outcome depending on the inserted datas
 
         //6.3.1 calculate standard price
@@ -112,11 +118,17 @@ submitButton.addEventListener('click', function(){
 
         //6.3.2 if underage calculate underage price
         if(age == "underage"){
+            const ageType = inputAge.options[inputAge.selectedIndex].text;
+            targetOriginalPrice.innerHTML  = `Prezzo base: <span class="text-danger text-decoration-line-through">${finalPrice.toFixed(2)}€</span>`
+            targetDiscountApplied.innerText = `Sconto per ${ageType}: ${underageDiscount * 100}%`;
             finalPrice -= finalPrice*underageDiscount;
         } 
         
         //6.3.3 if over 65 calculate over 65 price
         else if (age == "over65"){
+            const ageType = inputAge.options[inputAge.selectedIndex].text;
+            targetOriginalPrice.innerHTML  = `Prezzo base: <span class="text-danger text-decoration-line-through">${finalPrice.toFixed(2)}€</span>`
+            targetDiscountApplied.innerText = `Sconto per ${ageType}: ${over65Discount * 100}%`;
             finalPrice -= finalPrice*over65Discount;
         }
 
