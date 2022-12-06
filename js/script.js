@@ -34,10 +34,11 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 
 ----------------------------------------------------------------------------------------*/
 
-// 1. Store target in variable
+// 1. Store targets in variable
 
 const targetPrice = document.getElementById('price');
 ////console.log(targetPrice);
+const targetError = document.getElementById('error-message')
 
 // 2. Store button in variable
 
@@ -74,25 +75,48 @@ submitButton.addEventListener('click', function(){
     const kilometers = inputKilometers.value.trim();
     const age = inputAge.value;
 
-    //TODO 6.2 Validate datas
+    //6.2 Validate datas
 
-    //6.3 Set the outcome depending on the inserted datas
+    let isValid = true;
 
-    //6.3.1 calculate standard price
-    let finalPrice = kilometers * kmPrice;
+    if (!nameSurname){
 
-    //6.3.2 if underage calculate underage price
-    if(age == "underage"){
-        finalPrice -= finalPrice*underageDiscount;
-    } 
-    
-    //6.3.3 if over 65 calculate over 65 price
-    else if (age == "over65"){
-        finalPrice -= finalPrice*over65Discount;
+        isValid = false;
+        targetError.classList.remove('d-none');
+        targetError.innerText = "Il campo nome e cognome non può essere vuoto"
+
     }
 
-    //6.3.4 print final price
-    targetPrice.innerText = finalPrice.toFixed(2);
+    if (kilometers <= 0){
+
+        isValid = false;
+        targetError.classList.remove('d-none');
+        targetError.innerText = "Il valore dei km deve essere positivo"
+        
+    } 
+    
+    if (isValid) {
+
+        targetError.classList.add('d-none');
+        //6.3 Set the outcome depending on the inserted datas
+
+        //6.3.1 calculate standard price
+        let finalPrice = kilometers * kmPrice;
+
+        //6.3.2 if underage calculate underage price
+        if(age == "underage"){
+            finalPrice -= finalPrice*underageDiscount;
+        } 
+        
+        //6.3.3 if over 65 calculate over 65 price
+        else if (age == "over65"){
+            finalPrice -= finalPrice*over65Discount;
+        }
+
+        //6.3.4 print final price
+        targetPrice.innerText = finalPrice.toFixed(2);
+
+    }
 
 })
 

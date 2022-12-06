@@ -14,19 +14,26 @@
     <title>Biglietto treno</title>
 </head>
 <body>
-    <label for="name-surname">Inserisci nome e cognome</label>
-    <input type="text" name="name-surname" id="name-surname">
-    <label for="kilometers">Inserisci i kilometri da percorrere</label>
-    <input type="number" name="kilometers" id="kilometers" min="0">
-    <label for="age">Inserisci categoria d'età</label>
-    <select name="age" id="age">
-        <option value="underage">Minorenne</option>
-        <option value="adult">Adulto</option>
-        <option value="over65">Over 65</option>
-    </select>
-    <button id="submit">Genera</button>
-    <input type="reset" value="Annulla">
-    <p id="price"></p>
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <form class="col-3 d-flex flex-column">
+                <label for="name-surname" class="text-center mb-1">Inserisci nome e cognome</label>
+                <input type="text" name="name-surname" id="name-surname" class="mb-3">
+                <label for="kilometers" class="text-center mb-1">Inserisci i kilometri da percorrere</label>
+                <input type="number" name="kilometers" id="kilometers" min="0" class="mb-3">
+                <label for="age" class="text-center mb-1">Inserisci categoria d'età</label>
+                <select name="age" id="age" class="mb-3">
+                    <option value="underage">Minorenne</option>
+                    <option value="adult">Adulto</option>
+                    <option value="over65">Over 65</option>
+                </select>
+                <button type="button" id="submit" class="mb-3">Genera</button>
+                <input type="reset" value="Cancella" class="mb-3">
+                <p id="error-message-km" class="bg-danger d-none text-center text-white"></p>
+                <p id="price"></p>
+            </form>
+        </div>
+    </div>
     <!-- JAVASCRIPT -->
     <script src="js/script.js"></script>
 </body>
