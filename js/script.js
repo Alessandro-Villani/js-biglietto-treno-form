@@ -23,8 +23,9 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 4. Set price/km in a variable
 5. Set discout value variables
 6. Add listener for submit button
-    6.1 Validate datas
-    6.2 Set the outcome depending on the inserted datas
+    6.1 Collect datas from input values
+    6.2 Validate datas
+    6.3 Set the outcome depending on the inserted datas
 7. Print price on page.
 
 ----------------------------------------------------------------------------------------*/
@@ -63,9 +64,17 @@ console.log(over65Discount);
 //6. Add listener for submit button
 
 submitButton.addEventListener('click', function(){
-    //TODO 61 Validate datas
 
-    //6.2 Set the outcome depending on the inserted datas
+    //6.1 Collect values from inputs
+    const nameSurname = inputNameSurname.value;
+    const kilometers = inputKilometers.value;
+    const Age = inputAge.value;
+
+    //TODO 6.2 Validate datas
+
+    //6.3 Set the outcome depending on the inserted datas
+    
+
 
     
     
