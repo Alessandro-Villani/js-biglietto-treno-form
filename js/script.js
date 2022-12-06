@@ -26,6 +26,10 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
     6.1 Collect datas from input values
     6.2 Validate datas
     6.3 Set the outcome depending on the inserted datas
+        6.3.1 calculate standard price
+        6.3.2 if underage calculate underage price
+        6.3.3 if over 65 calculate over 65 price
+        6.3.4 print final price
 7. Print price on page.
 
 ----------------------------------------------------------------------------------------*/
@@ -66,23 +70,30 @@ console.log(over65Discount);
 submitButton.addEventListener('click', function(){
 
     //6.1 Collect values from inputs
-    const nameSurname = inputNameSurname.value;
-    const kilometers = inputKilometers.value;
-    const Age = inputAge.value;
+    const nameSurname = inputNameSurname.value.trim();
+    const kilometers = inputKilometers.value.trim();
+    const age = inputAge.value;
 
     //TODO 6.2 Validate datas
 
     //6.3 Set the outcome depending on the inserted datas
-    
 
+    //6.3.1 calculate standard price
+    let finalPrice = kilometers * kmPrice;
 
+    //6.3.2 if underage calculate underage price
+    if(age == "underage"){
+        finalPrice -= finalPrice*underageDiscount;
+    } 
     
-    
+    //6.3.3 if over 65 calculate over 65 price
+    else if (age == "over65"){
+        finalPrice -= finalPrice*over65Discount;
+    }
 
+    //6.3.4 print final price
+    targetPrice.innerText = finalPrice.toFixed(2);
 
-    
-
-    
 })
 
 
