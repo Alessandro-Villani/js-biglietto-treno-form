@@ -5,3 +5,30 @@ body{
 select{
     padding: 1px 2px;
 }
+
+/* Ticket */
+
+.ticket{
+    height: 300px;
+}
+
+.ticket .col-4{
+    border-right: 2px dashed black;
+}
+
+/* Ticket top */
+
+.ticket .ticket-top{
+    background-color: dodgerblue;
+    height: 20%;
+    border-radius: 10px 10px 0 0;
+}
+
+
+/* Ticket bottom */
+
+.ticket .ticket-bottom{
+    background-color: rgb(245,221,183);
+    height: 80%;
+    border-radius: 0 0 10px 10px;
+}
