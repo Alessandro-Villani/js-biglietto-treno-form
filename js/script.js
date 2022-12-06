@@ -18,12 +18,39 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 /*--------------------------------------TODO----------------------------------------------
 
 1. Store target in variable
-2. Set price/km in a variable
-3. Set discout value variables
-4. Add listener for submit button
-    4.1 Validate datas
-    4.2 Set the outcome depending on the inserted datas
-5. Print price on page.
+2. Store button in variable
+3. Set price/km in a variable
+4. Set discout value variables
+5. Add listener for submit button
+    5.1 Validate datas
+    5.2 Set the outcome depending on the inserted datas
+6. Print price on page.
 
 ----------------------------------------------------------------------------------------*/
+
+// 1. Store target in variable
+
+const targetPrice = document.getElementById('price');
+////console.log(targetPrice);
+
+// 2. Store button in variable
+
+const submitButton = document.getElementById('submit');
+console.log(submitButton);
+
+// 3. Set price/km in a variable
+
+const kmPrice = 0.21;
+console.log(kmPrice);
+
+// 4. Set discout value variables
+
+const underageDiscount = 0.2;
+console.log(underageDiscount);
+
+const over65Discount = 0.4;
+console.log(over65Discount);
+
+
+
 
